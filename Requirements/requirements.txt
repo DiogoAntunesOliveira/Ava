@@ -1,0 +1,6 @@
+
+# ava requirments
+speechRecognition
+pywhatkit
+wikipedia
+pyjokes
