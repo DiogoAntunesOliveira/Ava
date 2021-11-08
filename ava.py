@@ -40,7 +40,7 @@ def run_ava():
     if 'hello' in command_ava:
         talk("Hello Daddy")
 
-    if 'stop talking' in command_ava:
+    elif 'stop talking' in command_ava:
         return command_ava
 
     elif 'are you single' in command_ava:
@@ -88,13 +88,18 @@ def activate_ava():
         talk('All systems are being updated.')
         talk('Yes Daddy How can I help you')
         while True:
-            run_ava()
-            if run_ava() == "stop talking":
-                talk("Bye sir, hope you have a good day")
+            if "stop talking" in run_ava():
+                return run_ava()
                 break
+            run_ava()
+            print(run_ava())
+
     else:
         print("Not in daddy")
 
 
 while True:
-    activate_ava()
+    run_ava()
+    if "stop talking" in run_ava():
+        talk("Bye sir, hope you have a good day")
+        break
